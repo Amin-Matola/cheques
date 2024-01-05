@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Check Reading</title>
+	<style type="text/css">
+
+		body {
+			background: lavender;
+			font-family: verdana;
+		}
+		table {
+			width: 60%;
+			margin: auto;
+			background: white;
+			padding: 20px;
+		}
+
+		.init td:last-child:not(.title) {
+			background: #f9f9f9;
+			padding-left: 10px;
+		}
+
+		.title:first-child {
+/*			padding-bottom: 40px;*/
+		}
+
+		.title, h1 {
+			text-align: center;
+			font-weight: bold;
+		}
+
+		.title:last-child {
+			border-bottom: 1px solid #f2f2f2;
+		}
+
+		.init tr:nth-child(3) td {
+/*			padding-top: 40px;*/
+		}
+
+		table td {
+			padding: 5px 0;
+		}
+	</style>
+</head>
+<body>
+	
+	<div>
+		{% if data %}
+			<h1>Cheque Info</h1>
+			<table class="init">
+				<tr>
+					<th></th>
+					<th></th>
+				</tr>
+				<tr>
+					<td colspan="2" class="title">
+						{{title}}
+					</td>
+				</tr>
+				{% for item in data %}
+				<tr>
+					<td>{{item.key}}</td>
+					<td>{{item.value}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		{% endif %}
+		{% if more %}
+			<table>
+				<tr>
+					<th></th>
+				</tr>
+				<tr>
+					<td class="title" style="text-align:left;">
+						More Information
+					</td>
+				</tr>
+				{% for item in more %}
+				<tr>
+					<td>{{item}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+			
+
+		{% endif %}
+	</div>
+	<div>
+		<pre>{{ "" }}</pre>
+	</div>
+
+</body>
+</html>

@@ -1,2 +1,2 @@
 # cheques
-Bank cheques
+Bank check scanning using django
